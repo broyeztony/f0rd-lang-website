@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F0rd - The Multi-Chain Smart Contract Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inconsolata', monospace;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .toolbar {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .toolbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .main-content {
+            display: flex;
+            padding: 2rem;
+        }
+        .logo {
+            /* flex: 1; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .code-snippet {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-left: 35px;
+        }
+        .features {
+            background-color: #e9e9e9;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+        .feature-list {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .feature-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 25%;
+            max-width: 300px;
+            min-height: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .feature-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-item {
+                width: 80%;
+                max-width: none;
+            }
+        }
+        .copyright {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <div>F0rd</div>
+    <div>
+        <a href="#playground">Playground</a>
+        <a href="#composer">Composer</a>
+        <a href="#about">About</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="logo">
+        <!-- Replace with your actual logo -->
+        <h1><img src="F.jpg"></h1>
+    </div>
+    <div class="code-snippet">
+        <pre><code class="language-javascript">
+        contract Token;
+
+        let balances : address->u32;
+
+        def transfer (^ to: address, amount: i32) {
+
+            match {
+                case balances[sender] >= amount : {
+                    balances[sender] -= amount;
+                    balances[to] += amount;
+                }
+                case balances[sender] < amount : {
+                    // stop the execution, revert the transaction
+                    throw("Sender:", sender, "does not have enough funds to satisfy the transaction.");
+                }
+            }
+        }</code></pre>
+            </div>
+        </div>
+
+    <div class="features">
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>Write Once, Deploy Everywhere</h3>
+                <p>F0rd enables multi-chain compatibility, allowing developers to write smart contracts once and deploy them across various blockchain platforms.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Intuitive Syntax</h3>
+                <p>With a user-friendly and expressive syntax, F0rd makes smart contract development more accessible and efficient for developers of all levels.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Efficient Multi-VM Compilation</h3>
+                <p>F0rd's compiler efficiently translates your code into EVM bytecode or WebAssembly, ensuring optimal performance across different blockchain environments.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        &copy; 2023 F0rd. All rights reserved.
+    </div>
+</body>
+</html>

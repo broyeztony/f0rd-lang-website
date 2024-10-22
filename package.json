@@ -1,0 +1,12 @@
+{
+  "name": "f0rd-lang-website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "website": "clear && python3 -m http.server 9000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
