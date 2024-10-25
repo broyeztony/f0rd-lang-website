@@ -28,9 +28,26 @@
         .main-content {
             display: flex;
             padding: 2rem;
-            flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem; /* Add gap between logo and code snippet */
+            gap: 2rem;
+        }
+        .code-snippet {
+            flex: 2;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        .code-snippet pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .code-snippet code {
+            display: block;
+            width: 100%;
         }
         .logo {
             max-width: 100%;
@@ -41,14 +58,6 @@
             width: 100%;
             height: auto;
             max-width: 300px; /* Adjust this value to set the maximum width of your logo */
-        }
-        .code-snippet {
-            flex: 2;
-            background-color: #f4f4f4;
-            padding: 0px;
-            border-radius: 5px;
-            /* min-width: 300px; */ /* Ensure code snippet has a minimum width */
-            max-width: 100%; /* Prevent overflow on small screens */
         }
         .features {
             background-color: #e9e9e9;
