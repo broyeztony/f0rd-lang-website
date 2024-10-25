@@ -162,12 +162,21 @@ def lambda {
     }
 }
 
+/**
+ * ^ x: parameter located in calldata
+ * ∞ m: parameter located in storage
+ * y: parameter located in memory (default)
+ */
 def- symbols (^ x: string, ∞ m: address->u256, y: i16): u8 {
     -> 42;
 }
 
-def/ ext: u16 {
-    -> 2000;
+def/ externalDef: u16 {
+    -> simpleInt();
+}
+
+def- simpleInt: u16 {
+\t-> 2048;
 }
 
 def$ p(amount: i24): bool {
