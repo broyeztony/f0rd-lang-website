@@ -36,12 +36,18 @@
             max-width: 100%;
             height: auto;
         }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* Adjust this value to set the maximum width of your logo */
+        }
         .code-snippet {
             flex: 2;
             background-color: #f4f4f4;
-            padding: 1rem;
+            padding: 0px;
             border-radius: 5px;
-            min-width: 300px; /* Ensure code snippet has a minimum width */
+            /* min-width: 300px; */ /* Ensure code snippet has a minimum width */
             max-width: 100%; /* Prevent overflow on small screens */
         }
         .features {
@@ -104,7 +110,7 @@
 
 <div class="main-content">
     <div class="logo">
-        <h1><img src="F.jpg"></h1>
+        <h1><img src="F.svg"></h1>
     </div>
     <div class="code-snippet">
         <pre><code class="language-javascript">
@@ -121,7 +127,8 @@
                 }
                 case balances[sender] < amount : {
                     // stop the execution, revert the transaction
-                    throw("Sender:", sender, "does not have enough funds to satisfy the transaction.");
+                    throw("Sender:", sender,
+                          "does not have enough funds to satisfy the transaction.");
                 }
             }
         }</code></pre>
